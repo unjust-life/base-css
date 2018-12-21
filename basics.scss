@@ -1,0 +1,129 @@
+// 引入css重置
+@import './reset.scss';
+
+.block  {display: block;}
+.inline {display: inline;}
+.inline-block {display: inline-block;}
+.table {display: table;}
+.table-cell {display: table-cell;}
+
+// flex栅格布局
+.x-row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    // 等分列
+    >.col {
+        flex: 1;
+    }
+    @for $i from 1 through 12 {
+        >.col-#{$i} { width: 8.3333% * $i; }
+    }
+}
+
+
+/*功能类*/
+.float-left  {float: left;}
+.float-right {float: right;}
+.vm {vertical-align: middle;}// 垂直居中
+.over-hidden{overflow: hidden;}// 超出隐藏
+.over-auto  {overflow: auto;}//滚动区
+// 清除浮动
+.clearfix {zoom:1;}    /*==for IE6/7 Maxthon2==*/
+.clearfix:after {
+    clear:both;
+    content:'';
+    display:block;
+    width: 0;
+    height: 0;
+    visibility:hidden;
+}   /*==for FF/chrome/opera/IE8==*/
+
+// 文本样式
+.text-bold{font-weight:bold;}
+.text-delete {text-decoration: line-through;}// 删除线文本
+.text-l{text-align:left;}
+.text-c{text-align:center;}
+.text-r{text-align:right;}
+.text-justify{text-align:justify;text-justify:inter-ideograph;}
+
+// 禁止换行并显示省略号
+.nowrap{word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.cursor-pointer{cursor:pointer;}//光标呈现为指示链接的指针（一只手）
+.cursor-default{cursor:default;}//默认光标（通常是一个箭头）
+.cursor-help{cursor:help;}//此光标指示可用的帮助（通常是一个问号或一个气球）
+.cursor-move{cursor:move;}//此光标指示某对象可被移动。
+.select-no{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}//元素和子元素的文本将无法被选中
+
+// flex布局类
+// 左对齐
+.flex-l       {display: flex;}
+// 右对齐
+.flex-r       {display: flex;justify-content: flex-end;}
+// 两端对齐
+.flex-between {display: flex;justify-content: space-between;}
+// 环绕对齐
+.flex-around  {display: flex;justify-content: space-around;}
+// 全部居中
+.flex-center  {display: flex;justify-content: center;align-items: center;}
+// 竖轴对齐方式
+.algin-start {align-items: flex-start;}
+.align-center{align-items: center;}
+.algin-end   {align-items: flex-end;}
+
+
+// 字体大小原子类 f12-f60
+@for $i from 12 through 60 {
+    .f#{$i} { font-size: 1px * $i; }
+}
+
+
+// 向上箭头伪元素
+.x-arrow-up:after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    border-top: 1px solid #656565;
+    border-right: 1px solid #656565;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+// 向右箭头伪元素
+.x-arrow-r:after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    border-top: 1px solid #656565;
+    border-right: 1px solid #656565;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+// 向下箭头伪元素
+.x-arrow-down:after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border-top: 1px solid #656565;
+    border-right: 1px solid #656565;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+// 向左箭头伪元素
+.x-arrow-left:after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    border-top: 1px solid #656565;
+    border-right: 1px solid #656565;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
