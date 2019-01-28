@@ -23,21 +23,15 @@
 
 
 /*功能类*/
-.float-left  {float: left;}
-.float-right {float: right;}
+.float-left{float: left;}
+.float-right{float: right;}
+.clear {clear: both;*zoom: 1;}// 清除浮动
+.clearfix:after{content:””; display:block; clear:both;}
 .vm {vertical-align: middle;}// 垂直居中
 .over-hidden{overflow: hidden;}// 超出隐藏
-.over-auto  {overflow: auto;}//滚动区
-// 清除浮动
-.clearfix {zoom:1;}    /*==for IE6/7 Maxthon2==*/
-.clearfix:after {
-    clear:both;
-    content:'';
-    display:block;
-    width: 0;
-    height: 0;
-    visibility:hidden;
-}   /*==for FF/chrome/opera/IE8==*/
+.over-auto{overflow: auto;}//滚动区
+.table {display: table;}
+.table-cell {display: table-cell;}
 
 // 文本样式
 .text-bold{font-weight:bold;}
@@ -49,6 +43,7 @@
 
 // 禁止换行并显示省略号
 .nowrap{word-wrap:normal;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+
 .cursor-pointer{cursor:pointer;}//光标呈现为指示链接的指针（一只手）
 .cursor-default{cursor:default;}//默认光标（通常是一个箭头）
 .cursor-help{cursor:help;}//此光标指示可用的帮助（通常是一个问号或一个气球）
@@ -56,6 +51,7 @@
 .select-no{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;}//元素和子元素的文本将无法被选中
 
 // flex布局类
+
 // 左对齐
 .flex-l       {display: flex;}
 // 右对齐
@@ -66,6 +62,7 @@
 .flex-around  {display: flex;justify-content: space-around;}
 // 全部居中
 .flex-center  {display: flex;justify-content: center;align-items: center;}
+
 // 竖轴对齐方式
 .algin-start {align-items: flex-start;}
 .align-center{align-items: center;}
